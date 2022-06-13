@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundPageComponent } from '@core/components/not-found-page/not-found-page.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,8 @@ const routes: Routes = [
         (m) => m.CollectionModule
       ),
   },
+  {path: '', redirectTo: 'catalog', pathMatch: 'full'},
+  {path: '**', component: NotFoundPageComponent},
 ];
 
 @NgModule({
